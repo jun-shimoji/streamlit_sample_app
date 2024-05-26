@@ -1,0 +1,16 @@
+name: Send GET Request on Push to stg
+
+on:
+  push:
+    branches:
+      - stg
+
+jobs:
+  send-get-request:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Send GET request
+        run: |
+          curl -v https://httpbin.org/ip
+
